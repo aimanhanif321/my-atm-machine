@@ -1,6 +1,9 @@
 #! /usr/bin/env node
 
 import inquirer from "inquirer";
+import chalk from "chalk";
+
+console.log((chalk.blueBright `\n \t Welcome to ATM macine\n`))
 
 let myBalance = 50000;
 let myPin = 2244;
@@ -37,9 +40,9 @@ if(enterPin.yourPin === myPin){
                 ]
             );myBalance -= withdrawOpration.withdrawcash;
             if(withdrawOpration.withdrawcash <= myBalance){
-                console.log(`your remaing balance is ${myBalance}`);
+                console.log((chalk.green `\n \tyour remaing balance is ${myBalance}\n`));
             }else{
-                console.log(`your have insufficent balance`);
+                console.log((chalk.red`\n \tyour have insufficent balance\n`));
             }
         
         } 
@@ -55,36 +58,36 @@ if(enterPin.yourPin === myPin){
                 ]
             );if(fastCash.fast === "5000"){
                 myBalance -= 5000;
-                console.log(`Your opration is succesful!  \n your remaining balance is ${myBalance}.`);
+                console.log(chalk.green(`\n \tYour opration is succesful!  \n \t your remaining balance is ${myBalance}.\n`));
     
             }else if(fastCash.fast=== "10000"){
                 myBalance -= 10000;
-                console.log(`Your opration is succesful!  \n your remaining balance is ${myBalance}.`);
+                console.log(chalk.green(`\n \tYour opration is succesful!  \n \tyour remaining balance is ${myBalance}.\n`));
 
            }else if(fastCash.fast === "20000"){
                 myBalance -= 20000;
-                 console.log(`Your opration is succesful!  \n your remaining balance is ${myBalance}.`);
+                 console.log(chalk.green(`\n \tYour opration is succesful!  \n \t your remaining balance is ${myBalance}.\n`));
            }
            else if(fastCash.fast ==="30000"){
             myBalance -= 30000;
-             console.log(`Your opration is succesful!  \n your remaining balance is ${myBalance}.`);
+             console.log(chalk.green(`\n \tYour opration is succesful!  \n \t your remaining balance is ${myBalance}.\n`));
 
            }else if(fastCash.fast ==="40000"){
             myBalance -= 40000;
-            console.log(`Your opration is succesful!  \n your remaining balance is ${myBalance}.`);
+            console.log(chalk.green(`\n \tYour opration is succesful!  \n \t your remaining balance is ${myBalance}.\n`));
            }
            else if(fastCash.fast === "50000"){
             myBalance -= 50000;
-            console.log(`Your opration is succesful!  \n your remaining balance is ${myBalance}.`);
+            console.log(chalk.green(`\n \tYour opration is succesful!  \n  \tyour remaining balance is ${myBalance}.\n`));
        }
 
     }else if(selectOpration.opration === "check balance"){
-        console.log(`your balance is ${myBalance}`);
+        console.log(chalk.yellow(`\n \tyour balance is ${myBalance}\n`));
     }
 
     }
    else {
-    console.log("your pin is incorrect");
+    console.log(chalk.red("\n \tyour pin is incorrect\\n"));
 }
 
 let giveFeedback = await inquirer.prompt(
